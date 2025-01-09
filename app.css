@@ -1,0 +1,53 @@
+body{
+    background-color: #2a9d8f;
+}
+
+@font-face {
+    font-family: 'hebrew';
+    src: url('assets/fonts/SBL_Hbrw.ttf');
+}
+
+/* center the main section */
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+#flashcard{
+    background-color: #e9c46a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 30%;
+    width: 30%;
+    font-family: 'hebrew';
+    /* center text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1000%;
+
+}
+
+/* put definition input below flashcard */
+#definition{
+    padding-top: 20px;
+    text-align: center;
+}
+
+#buttons {
+    padding-top: 5px;
+}
+.btn-primary {
+    background-color: #f4a261;
+    border-color: #f4a261;
+}
+
+.btn-primary:hover {
+    background-color: #e76f51;
+    border-color: #e76f51;
+}
