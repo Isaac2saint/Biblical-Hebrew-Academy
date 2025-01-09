@@ -4,6 +4,7 @@ next_btn = document.getElementById('next');
 definition_input = document.getElementById('consonant-def');
 right_or_wrong = document.getElementById('right-or-wrong');
 check_btn = document.getElementById('check');
+flip_btn = document.getElementById('flip');
 // let previousConsonant = '';
 // let currentConsonant = '';
 const consonants = {
@@ -32,6 +33,8 @@ const consonants = {
   };
 
 let randomName = '';
+let randomLetter = '';
+let is_def = false;
 
 function displayRandomConsonant() {
     // previousConsonant = currentConsonant;
@@ -39,7 +42,7 @@ function displayRandomConsonant() {
     let letters = Object.keys(consonants);
       
     let randomConsonantIndex = Math.floor(Math.random() * letters.length);
-    let randomLetter = letters[randomConsonantIndex];
+    randomLetter = letters[randomConsonantIndex];
     randomName = consonants[randomLetter];
     // currentConsonant = randomConsonant;
   flashcard.innerHTML = randomLetter;
@@ -71,6 +74,19 @@ definition_input.addEventListener('keyup', function(event) {
         // displayRandomConsonant();
     }
 });
+
+flip_btn.addEventListener('click', function() {
+    if (is_def) {
+        flashcard.innerHTML = randomName;
+        is_def = false;
+    }
+    else {
+        flashcard.innerHTML = randomLetter;
+        is_def = true;
+    }
+});
+
+
 
 check_btn.addEventListener('click', checkDefinition);
 displayRandomConsonant();
