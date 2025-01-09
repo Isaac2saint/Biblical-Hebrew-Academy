@@ -3,6 +3,7 @@ flashcard = document.getElementById('flashcard');
 next_btn = document.getElementById('next');
 definition_input = document.getElementById('consonant-def');
 right_or_wrong = document.getElementById('right-or-wrong');
+check_btn = document.getElementById('check');
 // let previousConsonant = '';
 // let currentConsonant = '';
 const consonants = {
@@ -45,14 +46,11 @@ function displayRandomConsonant() {
 //   console.log(previousConsonant);
 }
 
-next_btn.addEventListener('click', displayRandomConsonant);
-
-definition_input.addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-        let definition = definition_input.value;
+function checkDefinition() {
+    let definition = definition_input.value;
         definition_input.value = '';
-        console.log(definition);
-        console.log(randomName);
+        // console.log(definition);
+        // console.log(randomName);
         if (definition === randomName) {
             console.log('Correct!');
             
@@ -62,8 +60,17 @@ definition_input.addEventListener('keyup', function(event) {
             console.log('Incorrect!');
             right_or_wrong.innerHTML = 'Incorrect!';
         }
+}
+
+next_btn.addEventListener('click', displayRandomConsonant);
+
+definition_input.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        checkDefinition();
+        
         // displayRandomConsonant();
     }
 });
 
+check_btn.addEventListener('click', checkDefinition);
 displayRandomConsonant();
