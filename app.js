@@ -56,7 +56,7 @@ function checkDefinition() {
         // console.log(randomName);
         if (definition === randomName) {
             console.log('Correct!');
-            
+            right_or_wrong.innerHTML = '';
             displayRandomConsonant();
         }
         else {
